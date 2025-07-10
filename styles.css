@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: sans-serif;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+}
+.circle:hover {
+  opacity: 0;
+}
+
+.moving-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+  position: absolute;
+  animation: move-around 8s linear infinite;
+}
+
+@keyframes move-around {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100vw - 80px);
+  }
+  50% {
+    top: calc(100vh - 80px);
+    left: calc(100vw - 80px);
+  }
+  75% {
+    top: calc(100vh - 80px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+.loading-container {
+  width: 80%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  animation: load 3s forwards;
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
